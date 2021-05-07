@@ -1,10 +1,13 @@
-from django.shortcuts import render
+from django.views.generic import DetailView, ListView
 
-from .models import City
+from cities.models import City
 
 
-def index(request):
-    qs = City.objects.all()
-    context = {'cities': qs}
+class CityListView(ListView):
+    # model = City
+    queryset = City.objects.all()
 
-    return render(request, 'cities/index.html', context)
+
+class CityDetailView(DetailView):
+    model = City
+    # queryset = City.objects.all()

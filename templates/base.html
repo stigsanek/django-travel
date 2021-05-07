@@ -1,3 +1,5 @@
+{% url 'cities:city-list' as city_list %}
+{% url 'cities:city-detail' as city_detail %}
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 <head>
@@ -11,14 +13,14 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
       <div class="container">
-        <a class="navbar-brand" href="#">Django Travel</a>
+        <a class="navbar-brand" href="{% url 'home' %}">Django Travel</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">Города</a>
+              <a class="nav-link {% if request.path == city_list %}active{% endif %}" href="{{ city_list }}">Города</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Поезда</a>
@@ -31,7 +33,7 @@
       </div>
     </nav>
   </header>
-  <main class="container">
+  <main class="container py-3">
     {% block content %}{% endblock %}
   </main>
   <footer class="footer mt-auto">
