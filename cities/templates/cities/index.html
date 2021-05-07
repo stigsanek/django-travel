@@ -1,7 +1,15 @@
 {% extends 'base.html' %}
-{% block title %}Cities{% endblock %}
+{% block title %}Города{% endblock %}
 
 {% block content %}
-<h1>Cities</h1>
-
+<div class="py-3">
+  <h1 class="mb-3">Города</h1>
+  <div class="row">
+    <div class="col-md">
+      {% for city in cities %}
+        <p>{{ city.name }}</p>
+      {% endfor %}
+    </div>
+  </div>
+</div>
 {% endblock %}
