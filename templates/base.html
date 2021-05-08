@@ -1,5 +1,4 @@
-{% url 'cities:city-list' as city_list %}
-{% url 'cities:city-detail' as city_detail %}
+{% url 'cities:list' as city_list %}
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 <head>
@@ -11,7 +10,7 @@
 </head>
 <body class="d-flex flex-column h-100">
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
       <div class="container">
         <a class="navbar-brand" href="{% url 'home' %}">Django Travel</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">

@@ -7,11 +7,14 @@
   <div class="col-md">
     {% for city in object_list %}
       <p>
-        <a class="btn btn-light" href="{% url 'cities:city-detail' pk=city.pk %}">{{ city.name }}</a>
+        <a href="{% url 'cities:detail' pk=city.pk %}">{{ city.name }}</a>
       </p>
     {% empty %}
       <p>Нет записей</p>
     {% endfor %}
+  </div>
+  <div class="mt-3">
+    <a class="btn btn-primary" href="{% url 'cities:create' %}">Добавить</a>
   </div>
 </div>
 {% endblock %}
