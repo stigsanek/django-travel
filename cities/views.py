@@ -21,7 +21,7 @@ class CityCreateView(CreateView):
     model = City
     form_class = CityForm
     template_name = 'cities/create.html'
-    success_url = reverse_lazy('cities:list')
+    # success_url = reverse_lazy('cities:list')
 
 
 class CityUpdateView(UpdateView):
