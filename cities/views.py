@@ -1,5 +1,6 @@
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, CreateView, UpdateView, DeleteView, ListView
+from django.contrib.messages.views import SuccessMessageMixin
 
 from cities.forms import CityForm
 from cities.models import City
@@ -18,18 +19,20 @@ class CityDetailView(DetailView):
     template_name = 'cities/detail.html'
 
 
-class CityCreateView(CreateView):
+class CityCreateView(SuccessMessageMixin, CreateView):
     model = City
     form_class = CityForm
     template_name = 'cities/create.html'
-    # success_url = reverse_lazy('cities:list')
+    success_url = reverse_lazy('cities:list')
+    success_message = 'Город успешно создан'
 
 
-class CityUpdateView(UpdateView):
+class CityUpdateView(SuccessMessageMixin, UpdateView):
     model = City
     form_class = CityForm
     template_name = 'cities/update.html'
     success_url = reverse_lazy('cities:list')
+    success_message = 'Город успешно отредактирован'
 
 
 class CityDeleteView(DeleteView):

@@ -10,7 +10,7 @@ class CityForm(forms.ModelForm):
             'unique': 'Город с таким названием уже существует'
         },
         widget=forms.TextInput(attrs={
-            'class': 'form-control',
+            'class': 'form-control mb-3',
             'placeholder': 'Введите название города'
         })
     )
