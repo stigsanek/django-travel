@@ -10,6 +10,7 @@ __all__ = ('CityListView', 'CityDetailView', 'CityCreateView', 'CityUpdateView',
 class CityListView(ListView):
     queryset = City.objects.all()
     template_name = 'cities/list.html'
+    paginate_by = 5
 
 
 class CityDetailView(DetailView):
