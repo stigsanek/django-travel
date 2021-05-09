@@ -1,15 +1,7 @@
 <div class="row">
   <form class="col-4" action="{{ action }}" method="POST">
     {% csrf_token %}
-    {% for field in form %}
-      {{ field.label_tag }}
-      <div class="is-invalid">
-        {{ field }}
-      </div>
-      <p class="invalid-feedback">
-        {{ field.errors.as_text}}
-      </p>
-    {% endfor %}
+    {{ form.as_p }}
     <button class="btn btn-primary" type="submit">{{ button }}</button>
   </form>
 </div>
