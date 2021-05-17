@@ -4,6 +4,22 @@
 {% block content %}
 <h1 class="mb-3">Поиск маршрута</h1>
 
+<div class="row mb-3">
+  <div class="col-md-8">
+    {% if routes %}
+      <h2 class="h4 mb-3">{{ cities.from_city }} - {{ cities.to_city }}</h2>
+      {% for route in routes %}
+      <p class="mb-1">Время в пути/ч: <b>{{ route.total_time}}.</b></p>
+        <div class="mb-3">
+          <p>Список поездов по этому маршруту:</p>
+          {% for train in route.trains %}
+            <span class="badge bg-secondary">{{ train }}</span>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
 {% url 'find_routes' as action_url %}
 {% include 'form.html' with button='Найти' action=action_url %}
 {% endblock %}
