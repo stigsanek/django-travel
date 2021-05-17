@@ -13,7 +13,7 @@
         <div class="mb-3">
           <p>Список поездов по этому маршруту:</p>
           {% for train in route.trains %}
-            <span class="badge bg-secondary">{{ train }}</span>
+            <p>{{ train }}: из г. {{ train.from_city.name }} в г. {{ train.to_city.name }}</p>
           {% endfor %}
         </div>
       {% endfor %}
