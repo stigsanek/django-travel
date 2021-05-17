@@ -54,11 +54,11 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
           </div>
         {% else %}
-        {% endif %}
           <div class="alert alert-success alert-dismissible">
             <span>{{ message }}</span>
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
           </div>
+        {% endif %}
       {% endfor %}
     {% endif %}
     {% block content %}{% endblock %}
