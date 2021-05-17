@@ -13,7 +13,7 @@ class TrainForm(forms.ModelForm):
 
     travel_time = forms.IntegerField(
         label='Время в пути/ч',
-        widget=forms.NumberInput(attrs={'class': 'form-control mb-3','placeholder': 'Введите время в пути/ч'})
+        widget=forms.NumberInput(attrs={'class': 'form-control mb-3', 'placeholder': 'Введите время в пути/ч'})
     )
 
     from_city = forms.ModelChoiceField(
