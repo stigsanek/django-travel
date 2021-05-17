@@ -7,19 +7,19 @@ class RouteForm(forms.Form):
     from_city = forms.ModelChoiceField(
         queryset=City.objects.all(),
         label='Город отправления',
-        widget=forms.Select(attrs={'class': 'form-control mb-3'})
+        widget=forms.Select(attrs={'class': 'form-control mb-3 js-example-basic-single'})
     )
 
     to_city = forms.ModelChoiceField(
         queryset=City.objects.all(),
         label='Город прибытия',
-        widget=forms.Select(attrs={'class': 'form-control mb-3'})
+        widget=forms.Select(attrs={'class': 'form-control mb-3 js-example-basic-single'})
     )
 
     cities = forms.ModelMultipleChoiceField(
         queryset=City.objects.all(),
         label='Через города',
-        widget=forms.SelectMultiple(attrs={'class': 'form-control mb-3'}),
+        widget=forms.SelectMultiple(attrs={'class': 'form-control mb-3 js-example-basic-multiple'}),
         required=False
     )
 

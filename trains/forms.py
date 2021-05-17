@@ -19,13 +19,13 @@ class TrainForm(forms.ModelForm):
     from_city = forms.ModelChoiceField(
         queryset=City.objects.all(),
         label='Город отправления',
-        widget=forms.Select(attrs={'class': 'form-control mb-3'})
+        widget=forms.Select(attrs={'class': 'form-control mb-3 js-example-basic-single'})
     )
 
     to_city = forms.ModelChoiceField(
         queryset=City.objects.all(),
         label='Город прибытия',
-        widget=forms.Select(attrs={'class': 'form-control mb-3'})
+        widget=forms.Select(attrs={'class': 'form-control mb-3 js-example-basic-single'})
     )
 
     class Meta:
