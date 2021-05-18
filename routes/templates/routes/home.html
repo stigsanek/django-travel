@@ -7,15 +7,24 @@
 <div class="row mb-3">
   <div class="col-md-8">
     {% if routes %}
-      <h2 class="h4 mb-3">{{ cities.from_city }} - {{ cities.to_city }}</h2>
+      <h2 class="h4 mb-4">{{ cities.from_city }} - {{ cities.to_city }}</h2>
       {% for route in routes %}
-      <p class="mb-1">Время в пути/ч: <b>{{ route.total_time}}.</b></p>
-        <div class="mb-3">
-          <p>Список поездов по этому маршруту:</p>
-          {% for train in route.trains %}
-            <p>{{ train }}: из г. {{ train.from_city.name }} в г. {{ train.to_city.name }}</p>
-          {% endfor %}
-        </div>
+        <table class="table table-hover mb-4">
+          <tr>
+            <th>Название</th>
+            <th>Город отправления</th>
+            <th>Город прибытия</th>
+            <th>Время в пути/ч</th>
+          </tr>
+            {% for train in route.trains %}
+              <tr>
+                <td>{{ train.name }}</td>
+                <td>{{ train.from_city.name }}</td>
+                <td>{{ train.to_city.name }}</td>
+                <td>{{ route.total_time }}</td>
+              </tr>
+            {% endfor %}
+        </table>
       {% endfor %}
     {% endif %}
   </div>
