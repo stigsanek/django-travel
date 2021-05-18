@@ -38,7 +38,7 @@ def sort_routes(routes):
 
 
 def get_routes(form) -> dict:
-    qs = Train.objects.all()
+    qs = Train.objects.all().select_related('from_city', 'to_city')
     graph = get_graph(qs)
     data = form.cleaned_data
 

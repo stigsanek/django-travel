@@ -9,19 +9,20 @@
     {% if routes %}
       <h2 class="h4 mb-4">{{ cities.from_city }} - {{ cities.to_city }}</h2>
       {% for route in routes %}
+        <p>Время в пути/ч: <b>{{ route.total_time }}</b></p>
         <table class="table table-hover mb-4">
           <tr>
+            <th>#</th>
             <th>Название</th>
             <th>Город отправления</th>
             <th>Город прибытия</th>
-            <th>Время в пути/ч</th>
           </tr>
             {% for train in route.trains %}
               <tr>
+                <td>{{ forloop.counter }}</td>
                 <td>{{ train.name }}</td>
                 <td>{{ train.from_city.name }}</td>
                 <td>{{ train.to_city.name }}</td>
-                <td>{{ route.total_time }}</td>
               </tr>
             {% endfor %}
         </table>
